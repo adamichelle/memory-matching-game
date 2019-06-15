@@ -2,6 +2,8 @@ let cardElements = document.getElementsByClassName('game-card');
 let cardElementsArray = [...cardElements];
 let imgElements = document.getElementsByClassName('game-card-img');
 let imgElementsArray = [...imgElements];
+let starElements = document.getElementsByClassName('star');
+let starElementsArray = [...starElements];
 let counter = document.getElementById('moveCounter');
 let openedCards = [];
 let matchedCards =  [];
@@ -97,6 +99,31 @@ function enable() {
 function moveCounter() {
     moves++;
     counter.innerHTML = `${moves} move(s)`;
+
+    //setting rating based on moves
+    if(moves > 8 && moves <= 12) {
+        for(let i=0; i<5; i++) {
+            starElementsArray[i].opacity = 1; 
+        }
+    } else if(moves > 12 && moves <= 16) {
+        for(let i=0; i<5; i++) {
+            if(i > 2) {
+                starElementsArray[i].style.opacity = 0.3;
+            }
+        }
+    } else if(moves > 16 && moves <= 20) {
+        for(let i=0; i<5; i++) {
+            if(i > 1) {
+                starElementsArray[i].style.opacity = 0.3;
+            }
+        }
+    } else if(moves > 20) {
+        for(let i=0; i<5; i++) {
+            if(i > 0) {
+                starElementsArray[i].style.opacity = 0.3;
+            }
+        }
+    }
 }
 
 window.onload = startGame();
