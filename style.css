@@ -27,6 +27,32 @@ h1 {
     text-decoration: underline;
 }
 
+.game-status-details {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;   
+    padding: 0.5em;
+    text-align: center;
+    font-family: monospace, Arial, Helvetica, sans-serif;
+}
+
+.move-counter, .timer {
+    font-size: 1.3em;
+}
+
+.rating {
+    font-size: 1.5em;
+    color: yellow;
+}
+
+.restart {
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 1.6em;
+    font-weight: 900;
+}
+
 .game-board {
     max-width: 50%;
     margin-left: auto;
