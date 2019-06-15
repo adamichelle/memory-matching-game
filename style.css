@@ -62,3 +62,7 @@ h1 {
 .show-img {
     visibility: visible;
 }
+
+.disabled {
+    pointer-events: none;
+}
