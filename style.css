@@ -41,8 +41,17 @@ h1 {
 }
 
 .rating {
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: #FFEA00;
+    display: inline;
+}
+
+.star {
+    margin-left: -10px;
+}
+
+.star:first-child{
+    margin-left: 0 !important;;
 }
 
 .restart {
