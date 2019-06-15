@@ -27,7 +27,7 @@ h1 {
     text-decoration: underline;
 }
 
-.game-grid {
+.game-board {
     max-width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -49,4 +49,16 @@ h1 {
     border-radius: 0.3em;
     margin: 0.8em;
     box-shadow: 2px 0 10px #212121;
+    cursor: pointer;
+}
+
+.game-card-img {
+    visibility: hidden;
+    object-fit: cover;
+    width: 6em;
+    height: 6em;
+}
+
+.show-img {
+    visibility: visible;
 }
