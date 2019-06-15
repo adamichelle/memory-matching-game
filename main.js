@@ -2,8 +2,10 @@ let cardElements = document.getElementsByClassName('game-card');
 let cardElementsArray = [...cardElements];
 let imgElements = document.getElementsByClassName('game-card-img');
 let imgElementsArray = [...imgElements];
+let counter = document.getElementById('moveCounter');
 let openedCards = [];
 let matchedCards =  [];
+let moves;
 
 let displayCard = function () {
     this.children[0].classList.toggle('show-img');
@@ -30,6 +32,8 @@ function shuffle(array) {
 }
 
 function startGame() {
+    moves = 0;
+    counter.innerText = `${moves} move(s)`;
     let shuffledImages = shuffle(imgElementsArray);
     for(i=0; i<shuffledImages.length; i++) {
         cardElements[i].appendChild(shuffledImages[i]);
@@ -41,6 +45,7 @@ function cardOpen(card) {
     openedCards.push(card);
     let len = openedCards.length;
     if(len === 2) {
+        moveCounter();
         if(openedCards[0].type === openedCards[1].type) {
             matched();
         } else {
@@ -87,6 +92,11 @@ function enable() {
             matchedCards[i].classList.add('disabled');
         }
     })
+}
+
+function moveCounter() {
+    moves++;
+    counter.innerHTML = `${moves} move(s)`;
 }
 
 window.onload = startGame();
