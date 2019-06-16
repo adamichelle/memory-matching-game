@@ -64,6 +64,12 @@ function startGame() {
         cardElements[i].children[0].classList.remove("show-img");
     }
 
+    //listen for events
+    
+    for(let i = 0; i < cardElementsArray.length; i++) {
+        cardElementsArray[i].addEventListener("click", displayCard)
+    }
+
     //reset moves
     moves = 0;
     counter.innerText = `${moves} move(s)`;
@@ -205,6 +211,7 @@ function endGame() {
     totalGameMovesElement.innerHTML = moves;
     finalStarRatingElement.innerHTML = starRating;
 
+    matchedCards = [];
     closeModal();
 }
 
@@ -216,7 +223,3 @@ function closeModal() {
 }
 
 window.onload = startGame();
-
-for(let i = 0; i < cardElementsArray.length; i++) {
-    cardElementsArray[i].addEventListener("click", displayCard)
-}
