@@ -146,6 +146,157 @@ h1 {
 	padding: 0.7em 1.4em;
 }
 
+/* Game Over Modal */
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    width: 80%;
+    margin: auto;
+    padding: 0;
+    position: relative;
+    top: 5%;
+    background-color: #EFEBE9;
+    border: 1px solid #808080;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation: animateTop 0.4s;
+}
+
+.modal-header {
+    border-bottom: 1px solid #D7CCC8;
+    padding: 0.6em 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.modal-body {
+    text-align: center;
+    padding: 1.6em 0 1em;
+}
+
+.modal-body p {
+    margin-bottom: 0.5em;
+}
+
+.game-over-icons {
+    animation: animateIcons 3s linear infinite;
+    position: relative;
+}
+
+.modal-footer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 0 1em 1.5em;
+}
+
+.modal-footer button {
+    padding: 0.3em 1em;
+    width: 40%;
+}
+
+.close {
+    font-size: 2em;
+    float: right;
+    margin-right: 0.8em;
+    margin-top: 0.2em;
+    font-weight: bold;
+    color: #3E2723;
+    position: relative;
+    animation: animateCloseIcon 5s linear 2s infinite;
+}
+
+.close:hover, .close:focus {
+    color: #8D6E63;
+    cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes animateTop {
+    from { top: -300px; opacity: 0; }
+    to { top: 5%; opacity: 1; }
+}
+
+@-moz-keyframes animateTop {
+    from { top: -300px; opacity: 0; }
+    to { top: 5%; opacity: 1; }
+}
+
+@-webkit-keyframes animateTop {
+    from { top: -300px; opacity: 0; }
+    to { top: 5%; opacity: 1; }
+}
+
+@keyframes animateIcons {
+    0% { top: 0em; left: 0em; }
+    40% { top: 0em; left: 0em; }
+    43% { top: -0.7em; left: 0em; }
+    46% { top: 0em; left: -0.3em; }
+    48% { top: -0.4em; left: 0.3em; }
+    50% { top: 0em; left: 0em; }
+    100% { top: 0em; left: 0em; }
+}
+
+@-moz-keyframes animateIcons {
+    0% { top: 0em; left: 0em; }
+    40% { top: 0em; left: 0em; }
+    43% { top: -0.7em; left: 0em; }
+    46% { top: 0em; left: -0.3em; }
+    48% { top: -0.4em; left: 0.3em; }
+    50% { top: 0em; left: 0em; }
+    100% { top: 0em; left: 0em; }
+}
+
+@-webkit-keyframes animateIcons {
+    0% { top: 0em; left: 0em; }
+    40% { top: 0em; left: 0em; }
+    43% { top: -0.7em; left: 0em; }
+    46% { top: 0em; left: -0.3em; }
+    48% { top: -0.4em; left: 0.3em; }
+    50% { top: 0em; left: 0em; }
+    100% { top: 0em; left: 0em; }
+}
+
+@keyframes animateCloseIcon {
+    0% { top: 0em; }
+    40% { top: 0em; }
+    43% { top: -0.2em; }
+    46% { top: 0em; }
+    48% { top: 0.2em; }
+    50% { top: 0em; }
+    100% { top: 0em; }
+}
+
+@-moz-keyframes animateCloseIcon {
+    0% { top: 0em; }
+    40% { top: 0em; }
+    43% { top: -0.1em; }
+    46% { top: 0em; }
+    48% { top: 0.1em; }
+    50% { top: 0em; }
+    100% { top: 0em; }
+}
+
+@-webkit-keyframes animateCloseIcon {
+    0% { top: 0em; }
+    40% { top: 0em; }
+    43% { top: -0.1em; }
+    46% { top: 0em; }
+    48% { top: 0.1em; }
+    50% { top: 0em; }
+    100% { top: 0em; }
+}
+
 .show-img {
     visibility: visible;
 }
