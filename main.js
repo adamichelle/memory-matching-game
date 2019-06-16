@@ -12,7 +12,9 @@ let moves;
 let second = 0,
     minute = 0,
     hour = 0,
-    interval;
+    interval,
+    totalGameTime,
+    starRating;
 
 
 let displayCard = function () {
@@ -92,6 +94,9 @@ function matched() {
     matchedCards.push(openedCards[0]);
     matchedCards.push(openedCards[1]);
     openedCards = [];
+    if(matchedCards.length == 16) {
+        endGame();
+    }
 }
 
 function unmatched() {
@@ -180,6 +185,14 @@ function startTimer() {
             minute = 0;
         }
     }, 1000)
+}
+
+function endGame() {
+    clearInterval(interval);
+    totalGameTime = timer.innerHTML;
+    starRating = document.querySelector('.rating').innerHTML;
+
+    alert(totalGameTime + ", " + starRating + ", " +moves)
 }
 
 window.onload = startGame();
