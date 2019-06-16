@@ -45,10 +45,14 @@ function startGame() {
 
 
     for(i=0; i<shuffledImages.length; i++) {
-        //remove all images from each card
+        //remove all images from previous games from each card (if any)
         cardElements[i].innerHTML = "";
+
+        //add the shuffled images to each card
         cardElements[i].appendChild(shuffledImages[i]);
         cardElements[i].type = `${shuffledImages[i].alt}`;
+
+        //remove all extra classes for game play
         cardElements[i].classList.remove("show", "open", "match", "disabled");
         cardElements[i].children[0].classList.remove("show-img");
     }
