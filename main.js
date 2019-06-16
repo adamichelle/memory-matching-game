@@ -40,13 +40,31 @@ function shuffle(array) {
 }
 
 function startGame() {
-    moves = 0;
-    counter.innerText = `${moves} move(s)`;
+    //shuffle cards
     let shuffledImages = shuffle(imgElementsArray);
+
+
     for(i=0; i<shuffledImages.length; i++) {
+        //remove all images from each card
+        cardElements[i].innerHTML = "";
         cardElements[i].appendChild(shuffledImages[i]);
         cardElements[i].type = `${shuffledImages[i].alt}`;
+        cardElements[i].classList.remove("show", "open", "match", "disabled");
+        cardElements[i].children[0].classList.remove("show-img");
     }
+
+    //reset moves
+    moves = 0;
+    counter.innerText = `${moves} move(s)`;
+
+    //reset star rating
+    for(let i=0; i<starElementsArray.length; i++) {
+        starElementsArray[i].style.opacity = 1;
+    }
+
+    //Reset Timer on game reset
+    timer.innerHTML = '0 mins 0 secs';
+    clearInterval(interval);
 }
 
 function cardOpen(card) {
@@ -120,17 +138,23 @@ function moveCounter() {
         }
     } else if(moves > 12 && moves <= 16) {
         for(let i=0; i<5; i++) {
-            if(i > 2) {
+            if(i > 3) {
                 starElementsArray[i].style.opacity = 0.3;
             }
         }
     } else if(moves > 16 && moves <= 20) {
         for(let i=0; i<5; i++) {
+            if(i > 2) {
+                starElementsArray[i].style.opacity = 0.3;
+            }
+        }
+    } else if(moves > 20 && moves <= 24) {
+        for(let i=0; i<5; i++) {
             if(i > 1) {
                 starElementsArray[i].style.opacity = 0.3;
             }
         }
-    } else if(moves > 20) {
+    } else if(moves > 24){
         for(let i=0; i<5; i++) {
             if(i > 0) {
                 starElementsArray[i].style.opacity = 0.3;

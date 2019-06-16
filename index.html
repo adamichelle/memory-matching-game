@@ -23,7 +23,7 @@
                 </div>
                 <span class="move-counter" id="moveCounter"></span>
                 <span class="timer" id="timer">0 mins 0 secs</span>
-                <button class="restart-btn" id="restartButton">↻</button>
+                <button class="restart-btn" id="restartBtn" onClick="startGame()" aria-label="restart game">↻</button>
             </div>
             <table class="game-board">
                 <tbody class="game-grid">
@@ -86,7 +86,7 @@
                 </tbody>               
             </table>
             <div class="restart-button-div">
-                <button class="restart-button">Restart ↻</button>
+                <button class="restart-button" id="restartButton" onClick="startGame()">Restart ↻</button>
             </div>
         </section>
     </main>
