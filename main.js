@@ -10,6 +10,7 @@ let modalElement = document.getElementById('gameOverModal');
 let totalGameMovesElement = document.getElementById('totalGameMoves');
 let totalGameTimeElement = document.getElementById('totalGameTime');
 let finalStarRatingElement = document.getElementById('finalStarRating');
+let closeModalIcon = document.getElementById('closeModal');
 let openedCards = [];
 let matchedCards =  [];
 let moves;
@@ -204,6 +205,14 @@ function endGame() {
     totalGameMovesElement.innerHTML = moves;
     finalStarRatingElement.innerHTML = starRating;
 
+    closeModal();
+}
+
+function closeModal() {
+    closeModalIcon.addEventListener("click", function() {
+        modalElement.classList.remove("show-modal");
+        startGame();
+    })
 }
 
 window.onload = startGame();
