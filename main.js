@@ -5,9 +5,15 @@ let imgElementsArray = [...imgElements];
 let starElements = document.getElementsByClassName('star');
 let starElementsArray = [...starElements];
 let counter = document.getElementById('moveCounter');
+let timer = document.getElementById('timer');
 let openedCards = [];
 let matchedCards =  [];
 let moves;
+let second = 0,
+    minute = 0,
+    hour = 0,
+    interval;
+
 
 let displayCard = function () {
     this.children[0].classList.toggle('show-img');
@@ -100,6 +106,13 @@ function moveCounter() {
     moves++;
     counter.innerHTML = `${moves} move(s)`;
 
+    if(moves == 1) {
+        second = 0;
+        minute = 0;
+        hour = 0;
+        startTimer();
+    }
+
     //setting rating based on moves
     if(moves > 8 && moves <= 12) {
         for(let i=0; i<5; i++) {
@@ -124,6 +137,21 @@ function moveCounter() {
             }
         }
     }
+}
+
+function startTimer() {
+    interval = setInterval(function(){
+        timer.innerHTML = `${minute} mins ${second} secs`;
+        second++;
+        if(second == 60) {
+            minute++;
+            second = 0;
+        }
+        if(minute == 60) {
+            hour++;
+            minute = 0;
+        }
+    }, 1000)
 }
 
 window.onload = startGame();
