@@ -88,7 +88,7 @@ function flashCards() {
     }, 700)
 }
 
-let displayCard = function () {
+function displayCard () {
     this.children[0].classList.toggle('show-img');
     this.classList.toggle("open");
     this.classList.toggle("show");
