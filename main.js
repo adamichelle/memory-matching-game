@@ -21,15 +21,6 @@ let second = 0,
     totalGameTime,
     starRating;
 
-
-let displayCard = function () {
-    this.children[0].classList.toggle('show-img');
-    this.classList.toggle("open");
-    this.classList.toggle("show");
-    this.classList.toggle("disabled");
-    cardOpen(this);
-}
-
 function shuffle(array) {
     let currentIndex = array.length,
         temporaryValue,
@@ -64,11 +55,13 @@ function startGame() {
         cardElements[i].children[0].classList.remove("show-img");
     }
 
-    //listen for events
-    
+    //listen for events on the cards
     for(let i = 0; i < cardElementsArray.length; i++) {
         cardElementsArray[i].addEventListener("click", displayCard)
     }
+
+    //when game starts show all the cards for a split second
+    flashCards();
 
     //reset moves
     moves = 0;
@@ -82,6 +75,25 @@ function startGame() {
     //Reset Timer on game reset
     timer.innerHTML = '0 mins 0 secs';
     clearInterval(interval);
+}
+
+function flashCards() {
+    for(i=0; i<cardElements.length; i++) {
+        cardElements[i].children[0].classList.add("show-img")
+    }
+    setTimeout(function(){
+        for(i=0; i<cardElements.length; i++) {
+            cardElements[i].children[0].classList.remove("show-img")
+        }
+    }, 700)
+}
+
+let displayCard = function () {
+    this.children[0].classList.toggle('show-img');
+    this.classList.toggle("open");
+    this.classList.toggle("show");
+    this.classList.toggle("disabled");
+    cardOpen(this);
 }
 
 function cardOpen(card) {
