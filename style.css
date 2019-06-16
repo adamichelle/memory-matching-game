@@ -222,7 +222,38 @@ h1 {
     cursor: pointer;
 }
 
-/* Add Animation */
+/* Page Footer */
+.page-footer {
+    border-top: 1px solid #D7CCC8;
+    padding: 0.5em 0;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.page-footer-link {
+    color: #5D4037;
+    font-weight: 700;
+}
+
+.page-footer-link:hover {
+    color: #212121;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.page-footer-link:active {
+    text-decoration: none;
+}   
+
+.page-footer-link:focus {
+    outline: #A1887F auto 5px;
+}
+
+.page-footer-link:visited {
+    color: #3E2723;
+}
+
+/* Animations */
 @keyframes animateTop {
     from { top: -300px; opacity: 0; }
     to { top: 5%; opacity: 1; }
