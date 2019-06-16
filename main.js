@@ -222,4 +222,9 @@ function closeModal() {
     })
 }
 
+function playAgain() {
+    modalElement.classList.remove("show-modal");
+    startGame();
+}
+
 window.onload = startGame();
