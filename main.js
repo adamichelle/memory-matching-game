@@ -85,7 +85,7 @@ function flashCards() {
         for(i=0; i<cardElements.length; i++) {
             cardElements[i].children[0].classList.remove("show-img")
         }
-    }, 700)
+    }, 1000)
 }
 
 function displayCard() {
