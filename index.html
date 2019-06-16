@@ -89,6 +89,28 @@
                 <button class="restart-button brown-button" id="restartButton" onClick="startGame()">Restart ↻</button>
             </div>
         </section>
+        
+        <!--Modal on game over -->
+        <div class="modal" id="gameOverModal">
+            <div class="modal-content">
+                <span aria-label="close" role="button" class="close">&times;</span>
+                <div class="modal-header">
+                    <h2>Game Over</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="message">
+                        <p>Congratulations!!! You successfully completed the game.</p>
+                        <p>You completed the game using <span id="totalNoMoves"></span> moves
+                            <br>in <span id="totalTime"></span>
+                        </p>
+                        <p>Rating: <span id="finalStarRating"></span></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="brown-button" id="playAgain">Play Again</button>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="main.js"></script>
 </body>
