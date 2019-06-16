@@ -6,6 +6,10 @@ let starElements = document.getElementsByClassName('star');
 let starElementsArray = [...starElements];
 let counter = document.getElementById('moveCounter');
 let timer = document.getElementById('timer');
+let modalElement = document.getElementById('gameOverModal');
+let totalGameMovesElement = document.getElementById('totalGameMoves');
+let totalGameTimeElement = document.getElementById('totalGameTime');
+let finalStarRatingElement = document.getElementById('finalStarRating');
 let openedCards = [];
 let matchedCards =  [];
 let moves;
@@ -148,25 +152,25 @@ function moveCounter() {
     } else if(moves > 12 && moves <= 16) {
         for(let i=0; i<5; i++) {
             if(i > 3) {
-                starElementsArray[i].style.opacity = 0.3;
+                starElementsArray[i].style.opacity = 0.1;
             }
         }
     } else if(moves > 16 && moves <= 20) {
         for(let i=0; i<5; i++) {
             if(i > 2) {
-                starElementsArray[i].style.opacity = 0.3;
+                starElementsArray[i].style.opacity = 0.1;
             }
         }
     } else if(moves > 20 && moves <= 24) {
         for(let i=0; i<5; i++) {
             if(i > 1) {
-                starElementsArray[i].style.opacity = 0.3;
+                starElementsArray[i].style.opacity = 0.1;
             }
         }
     } else if(moves > 24){
         for(let i=0; i<5; i++) {
             if(i > 0) {
-                starElementsArray[i].style.opacity = 0.3;
+                starElementsArray[i].style.opacity = 0.1;
             }
         }
     }
@@ -192,7 +196,14 @@ function endGame() {
     totalGameTime = timer.innerHTML;
     starRating = document.querySelector('.rating').innerHTML;
 
-    alert(totalGameTime + ", " + starRating + ", " +moves)
+    //show modal on game end
+    modalElement.classList.add("show-modal");
+    
+    //show totalGameTime, moves and finalStarRating in Modal
+    totalGameTimeElement.innerHTML = totalGameTime;
+    totalGameMovesElement.innerHTML = moves;
+    finalStarRatingElement.innerHTML = starRating;
+
 }
 
 window.onload = startGame();

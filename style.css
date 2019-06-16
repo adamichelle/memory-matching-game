@@ -148,6 +148,7 @@ h1 {
 
 /* Game Over Modal */
 .modal {
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -303,4 +304,8 @@ h1 {
 
 .disabled {
     pointer-events: none;
+}
+
+.show-modal {
+    display: block;
 }
