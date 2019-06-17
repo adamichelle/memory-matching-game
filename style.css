@@ -71,6 +71,40 @@ h1 {
     text-decoration: underline;
 }
 
+.tool-tip {
+    float: right;
+    margin-top: -3.7em;
+    margin-right: 0.3em;
+    position: relative;
+}
+
+.tool-tip button {
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 1.6em;
+    font-weight: 900;
+}
+
+.tool-tip .tool-tip-text {
+    visibility: hidden;
+    width: 5.5em;
+    background-color: #000000;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    top: 2.1em;
+    right: 0;
+    z-index: 1;
+    border-radius: 0.3em;
+}
+
+.tool-tip:hover .tool-tip-text{
+    visibility: visible;
+    right: 2em
+}
+
 .game-status-details {
     display: flex;
     flex-wrap: wrap;
