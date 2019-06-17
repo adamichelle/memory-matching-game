@@ -121,6 +121,52 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal to display Game Instructions -->
+        <div class="modal1" id="helpModal">
+            <div class="modal-content">
+                <span aria-label="close" role="button" class="close" id="closeHelpModal">&times;</span>
+                <div class="modal-header">
+                    <h2>How to Play</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="help-tips">
+                        <p>This is a Matching Game used to test your memory retention abilities</p>
+                        <p>The game consists of:</p>
+                        <ul>
+                            <li>&diams; A game board with 16 cards - 8 matching pairs of cards</li>
+                            <li>&diams; A game status indicator which consists of :
+                                <ul>
+                                    <li>&diamond; A rating indicator - A list of stars which indicates your rating based on the number of your moves.</li>
+                                    <li>&diamond; A move counter - Indicates the number of moves you've made.</li>
+                                    <li>&diamond; A timer - Indicates the total number of time you take to match all cards.</li>
+                                    <li>&diamond; A restart button.</li>
+                                </ul>
+                            </li>
+                            <li>&diams; A larger restart button.</li>
+                        </ul>
+                        <p>When the page loads the game starts.</p>
+                        <p>All the 8 pairs of cards i.e 16 cards are flashed</p>
+                        <p>How to play:</p>
+                        <ul>
+                            <li>&bullet; Click on a black square to reveal the card</li>
+                            <li>&bullet; Click on a second black square to reveal the card
+                                <ul>
+                                    <li>a. If the two cards match, the cards stay revealed.</li>
+                                    <li>b. If there is no match, the cards are hidden and you can click another pair.</li>
+                                </ul>
+                            </li>
+                            <li>&bullet; You can click either of the restart buttons <em>↻</em> or <em>Restart ↻</em> at any point in time to start all over.</li>
+                            <li>&bullet; When you have correctly matched all 8 pairs of cards, the game ends and your total game time, total number of moves and rating will be displayed.</li>
+                            <li>&bullet; You can click the <em>Play Again</em> in the modal that pops up to start a new game.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="brown-button" onClick="">Close</button>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="page-footer">
