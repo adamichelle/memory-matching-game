@@ -1,3 +1,14 @@
+//Show Instructions
+const helpModal = document.getElementById('helpModal');
+function openHelpModal() {
+    helpModal.classList.add('show-modal');
+}
+
+function closeHelpModal() {
+    helpModal.classList.remove('show-modal');
+}
+
+// Main Game Play
 let cardElements = document.getElementsByClassName('game-card');
 let cardElementsArray = [...cardElements];
 let imgElements = document.getElementsByClassName('game-card-img');

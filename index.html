@@ -11,8 +11,8 @@
     <header>
         <h1>Memory Game <span></h1>
         <span class="tool-tip">
-            <button aria-label="how to play">
-                <svg width="40" height="40" class="">
+            <button aria-label="how to play" onClick="openHelpModal()">
+                <svg width="40" height="40">
                     <circle cx="20" cy="20" r="15" stroke-width="2" fill="#000000" />
                     <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="1em" dy=".4em">❓</text>
                     ❓
@@ -123,9 +123,9 @@
         </div>
 
         <!-- Modal to display Game Instructions -->
-        <div class="modal1" id="helpModal">
+        <div class="modal" id="helpModal">
             <div class="modal-content">
-                <span aria-label="close" role="button" class="close" id="closeHelpModal">&times;</span>
+                <span aria-label="close" role="button" class="close" onClick="closeHelpModal()">&times;</span>
                 <div class="modal-header">
                     <h2>How to Play</h2>
                 </div>
@@ -163,7 +163,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="brown-button" onClick="">Close</button>
+                    <button class="brown-button" onClick="closeHelpModal()">Close</button>
                 </div>
             </div>
         </div>
