@@ -250,4 +250,9 @@ function playAgain() {
     startGame();
 }
 
-window.onload = startGame();
+// wait for some milliseconds before game starts
+window.onload = function () {
+    setTimeout(function() {
+        startGame()
+    }, 1200);
+}
